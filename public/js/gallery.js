@@ -27,6 +27,10 @@ var Gallery =
                 imageList = data.images;
                 // log the data
                 console.log(data);
+                
+                //Calculate Number of Pages
+                this.numberOfImages = length(data.images);
+                this.totalPages = ceil(this.numberOfImages / 4);
             }).catch( err => {
                 console.log(err);
             });
@@ -51,10 +55,6 @@ var Gallery =
         }).catch( err => {
             console.log(err);
         });*/
-
-        //Calculate Number of Pages
-        this.numberOfImages = length(data.images);
-        this.totalPages = ceil(this.numberOfImages / 4);
 
         this.render();
     },
