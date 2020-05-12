@@ -297,7 +297,8 @@ app.post("/login", errorHandler( async (req, res) => {
     if (isVerified) {
         req.session.username = username;
         //req.session.uuid = await UserController.getUserID(username);
-        req.session.uuid = await UserModel.getUserID(username);
+        //req.session.uuid = await UserModel.getUserID(username);
+        req.session.uuid = await UserCon.getUserID(username);
         console.log(`Inside Loop - req.session.uuid = ${req.session.uuid}`);
     }
     console.log(`Outside Loop - req.session.uuid = ${req.session.uuid}`);
