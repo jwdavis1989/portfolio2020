@@ -296,7 +296,9 @@ app.post("/login", errorHandler( async (req, res) => {
     if (isVerified) {
         req.session.username = username;
         req.session.uuid = await UserController.getUserID(username);
+        console.log(`Inside Loop - req.session.uuid = ${req.session.uuid}`);
     }
+    console.log(`Outside Loop - req.session.uuid = ${req.session.uuid}`);
     res.sendStatus(status);
 }));
 
