@@ -14,7 +14,7 @@ async function uploadImage()
     try {
         const res = await fetch('http://40.122.146.213/gallery', {
             method: 'POST',
-            body: JSON.stringify(data);
+            body: JSON.stringify(data)
         });
         console.log(`Res.status = ${res.status}`)
         if (res.status === 403) {
