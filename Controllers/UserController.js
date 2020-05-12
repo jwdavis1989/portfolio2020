@@ -8,7 +8,9 @@ class UserController
     }
     async getUserID(username)
     {
-        return await this.UserModel.getUserID(username);
+        var uuid = await this.UserModel.getUserID(username);
+        console.log(uuid);
+        return uuid;
     }
 
 }
