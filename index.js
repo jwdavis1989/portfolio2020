@@ -138,6 +138,10 @@ app.get("/view_gallery/:userID", (req, res) => {
     res.sendFile(path.join(__dirname, '/public/html/gallery.html'));
 });
 
+app.get("/view_gallery", (req, res) => {
+    res.redirect(`/view_gallery/${req.session.userID}`);
+});
+
 
 /*
         Getting keyword list
