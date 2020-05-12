@@ -133,6 +133,11 @@ app.get("/keywords_list", (req, res) => {
     res.sendFile(path.join(__dirname, '/public/html/addKeywords.html'));
 });
 
+app.get("/menu", (req, res) => {
+    res.sendFile(path.join(__dirname, '/public/html/menu.html'));
+});
+
+
 //Serve up Gallery Page
 app.get("/view_gallery/:userID", (req, res) => {
     res.sendFile(path.join(__dirname, '/public/html/gallery.html'));
@@ -266,7 +271,7 @@ app.post("/register", errorHandler(async (req, res) => {
 */
 app.get("/login", errorHandler(async (req, res) => {
     if (req.session.isVerified) {
-        res.redirect("/keywords_list");
+        res.redirect("/menu");
     } else {
         res.sendFile(path.join(__dirname, "public", "html", "login.html"));
     }

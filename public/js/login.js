@@ -19,8 +19,7 @@ async function sendPass () {
         headers: {'Content-Type': 'application/json'}
     });
     if (res.status === 200) {
-        alert('Login successful');
-        window.location = '/keywords_list';
+        window.location = '/menu';
     } else if (res.status === 401) {
         alert('Incorrect username/password');
     } else {
