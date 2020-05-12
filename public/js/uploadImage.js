@@ -1,5 +1,5 @@
 //Function that takes the user uploaded image file, then stores it as a 64bit url I think
-function uploadImage()
+async function uploadImage()
 {
     var data = 
     {
