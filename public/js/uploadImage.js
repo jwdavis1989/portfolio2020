@@ -8,7 +8,7 @@ async function uploadImage()
     }*/
     var data = new FormData();
     data.append(title, document.getElementById('title').value);
-    data.append(image, document.getElementById('file').files[0])
+    data.append(image, document.getElementById('file').files[0]);
 
     //Call path to post the saved data to the database
     try {
