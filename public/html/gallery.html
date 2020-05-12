@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>View Gallery</title>
+    <meta charset="UTF-8">
+    <link rel='stylesheet' href='../css/rng.css'>
+    <!-- Include Javascript Script -->
+    <script src="../js/gallery.js"></script>
+  </head>
+  <body onload="">
+    <h1><img src="../resources/images/gallery_button.png" width="15%"></h1>
+
+    <table width="100%">
+      <tbody>
+          <tr>
+              <form name="userSettings" method="post">
+                <img src="../resources/images/previous_button_recolor.png" width="10%" onclick="Gallery.loadPreviousPage()">
+                <img src="../resources/images/next_button_recolor.png" width="10%" onclick="Gallery.loadNextPage()">
+                <!-- <input type="button" value="Previous Page" onclick="loadPreviousPage()"> -->
+                <!-- <input type="button" value="Next Page" onclick="loadNextPage()"> -->
+              </form>
+          </tr>
+          <tr>
+            <!--Beginning of JS Generated Code-->
+            <div id=imageGrid>
+            </div>
+            <!--End of JS Generated Code-->
+          </tr>
+      </tbody>
+    </table>
+  </body>
+</html>

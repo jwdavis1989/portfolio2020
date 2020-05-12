@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Add Keywords</title>
+    <meta charset="UTF-8">
+    <link rel='stylesheet' href='../css/rng.css' />
+  </head>
+  <body> <script src="../js/addKeywords.js"></script>
+        <h1><img src="../resources/images/ideas_button.png" width="15%"></h1>
+        <h2>
+                <div id='sentenceLocation'>
+                        Click The Button To Generate!
+                </div>
+        </h2>
+        <button onclick="generateSentence()">Generate</button>
+        <h1>Add New Keywords</h1>
+                                <section id='addKeywords-form-area'>
+                                        <form name='addKeywords-form' id='addKeywords-form' action='/keywords' method='POST'>
+                                                <label for='addKeywords-item-text'>
+                                                </label>
+                                                <input type="text" name='addKeywords-item-text' id='addKeywords-item-text' maxlength="280">
+                                                <select name='addKeywords-item-type' id='addKeywords-item-type'>
+                                                        <option value='Subject' selected>Subject</option>
+                                                        <option value='Verb'>Verb</option>
+                                                        <option value='Adjective'>Adjective</option>
+                                                        <option value='Location'>Location</option>
+                                                </select>
+                                                <input type="submit" name='addKeywords-item-submit' id='addKeywords-item-submit' value='Add'>
+                                                
+                                        </form>
+                                        <form name='addKeywords-filter' id='filter-form'>        
+                                                <select name='addKeywords-filter-type' id='addKeywords-filter-type'>
+                                                        <option value='Subject' selected>Subject</option>
+                                                        <option value='Verb'>Verb</option>
+                                                        <option value='Adjective'>Adjective</option>
+                                                        <option value='Location'>Location</option>
+                                                        <option value='All'>All</option>
+                                                </select>
+                                                <input type="submit" name='addKeywords-filter-submit' id='addKeywords-filter-submit' value='List'>
+                                        </form>
+                                </section>
+                        <section id='addKeywords-list-area'>
+                                <ul id='addKeywords-list'>
+                                </ul>
+                        </section>
+                </tbody>
+        </table>
+
+<template id='addKeywords-item-template'>
+        <li class='addKeywords-item'>
+                [<span class='addKeywords-item-type'>Subject</span>]
+                <span class='addKeywords-item-text'>Lorem Ipsum</span>
+        </li>
+</template>
+
+  </body>
+</html>

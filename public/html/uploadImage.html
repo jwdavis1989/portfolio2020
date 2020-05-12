@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Upload Image</title>
+    <meta charset="UTF-8">
+    <link rel='stylesheet' href='../css/rng.css'>
+    <!-- Include Javascript Script -->
+    <script src="uploadImage.js"></script>
+  </head>
+  <body onload="">
+    <h1><img src="../resources/images/upload_button.png" width="15%"></h1>
+
+    <table width="100%">
+      <tbody>
+          <tr>
+              <form name="imageData" method="post">
+                
+                <td>
+                  <input type="file" id="file" required>
+                </td>
+          </tr>
+          <tr>
+            <td>
+              Title: <input type="text" id="title" required>
+            </td>
+          </tr>
+          <tr>
+                <td>
+                  <input type="submit" id="submit" onclick = "uploadImage()">
+                </td>
+              </form>
+          </tr>
+      </tbody>
+    </table>
+  </body>
+</html>

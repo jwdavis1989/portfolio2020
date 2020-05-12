@@ -1,0 +1,28 @@
+body {
+	padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  text-align: center;
+  color: black;
+  background-image: url("../resources/images/watercolor_background_1.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  }
+  table {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  a {
+	color: #00B7FF;
+  }
+  
+  #addKeywords-item-text {
+	  width: 40em;
+  }
+  
+  .placeholder-item {
+	  color: #777777;
+  }
+  
