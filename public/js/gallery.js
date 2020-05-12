@@ -56,7 +56,7 @@ var Gallery =
         this.numberOfImages = length(data.images);
         this.totalPages = ceil(this.numberOfImages / 4);
 
-        this.render(this.currentPage);
+        this.render();
     },
 
     render: function()
