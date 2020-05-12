@@ -5,6 +5,7 @@ class UserController
     constructor (dao) 
     {
         this.UserModel = new UserModel(dao);
+        console.log(`UserController Constructed Successfully.`)
     }
     async getUserID(username)
     {
