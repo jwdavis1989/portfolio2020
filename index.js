@@ -140,12 +140,12 @@ app.get("/menu", (req, res) => {
 
 
 //Serve up Gallery Page
-app.get("/view_gallery/:userID", (req, res) => {
+app.get("/view_gallery/:username", (req, res) => {
     res.sendFile(path.join(__dirname, '/public/html/gallery.html'));
 });
 
 app.get("/view_gallery", (req, res) => {
-    res.redirect(`/view_gallery/${req.session.uuid}`);
+    res.redirect(`/view_gallery/${req.session.username}`);
 });
 
 
@@ -159,9 +159,9 @@ app.get("/keywords", errorHandler(async (req, res) => {
 }));
 
 //Populate gallery images when viewing someone's gallery
-app.get("/gallery/:userID", errorHandler(async (req, res) => {
-    const userID = req.params.userID;
-    const rows = await Images.getAllWithUUID(userID);
+app.get("/gallery/:username", errorHandler(async (req, res) => {
+    const galleryUsername = req.params.username;
+    const rows = await Images.getAllWithUUID(galleryUsername);
     res.send(JSON.stringify({images: rows}));
 }));
 
