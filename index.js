@@ -311,8 +311,8 @@ async function initDB () {
     Users = new UserModel(dao);
     await Users.createTable();
     Auth = new AuthController(dao);
-    await Images.createTable();
     Images = new ImageModel(dao);
+    await Images.createTable();
 }
 
 // This is our default error handler (the error handler must be last)
