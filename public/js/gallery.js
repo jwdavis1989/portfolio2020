@@ -13,9 +13,8 @@ var Gallery =
     {
         var url = window.location.pathname;
         this.username = url.substring(url.lastIndexOf('/') + 1);
-
+        console.log(`Before Fetch`);
         //Requests image JSON from server
-        async function generateSentence (event) {
             fetch(`http://40.122.146.213/gallery/${this.username}`, {
                 method: 'GET'
             }).then( res => {
@@ -27,14 +26,15 @@ var Gallery =
                 imageList = data.images;
                 // log the data
                 console.log(data);
-                
+
                 //Calculate Number of Pages
                 this.numberOfImages = length(data.images);
                 this.totalPages = ceil(this.numberOfImages / 4);
             }).catch( err => {
                 console.log(err);
             });
-        }
+            console.log(`After Fetch`);
+        
 
         //Generate Image URLs for each image in imageList
         for (var i=0; i < this.imageList.length;i++)
