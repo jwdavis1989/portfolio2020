@@ -32,6 +32,26 @@ var Gallery =
             });
         }
 
+        //Generate Image URLs for each image in imageList
+        for (var i=0; i < this.imageList.length;i++)
+        {
+            //img.src     = URL.createObjectURL(img);   //Template
+            this.imageSrcList[i] = URL.createObjectURL(this.imageList[i].image);
+        }
+        
+        /*fetch('http://40.122.146.213/gallery/:username', {
+            method: 'GET'
+        }).then( res => {
+            console.log(res)
+            return res.json();
+        }).then( data => {
+            // log the data
+            console.log(data);
+            image_list = data.keywords;
+        }).catch( err => {
+            console.log(err);
+        });*/
+
         //Calculate Number of Pages
         this.numberOfImages = length(data.images);
         this.totalPages = ceil(this.numberOfImages / 4);
@@ -41,30 +61,8 @@ var Gallery =
 
     render: function()
     {
-        fetch('http://40.122.146.213/gallery/:username', {
-            method: 'GET'
-        }).then( res => {
-            console.log(res)
-            return res.json();
-        }).then( data => {
-            // log the data
-            console.log(data);
-            // overwrite local keywords with the array of keywords
-            // recieved from the server
-            image_list = data.keywords;
-        }).catch( err => {
-            console.log(err);
-        });
         //Generate new html/css code for the imageGrid div
         console.log('Rendering Beginning . . .');
-
-        //Generate Image URLs for each image in imageList
-        for (var i=0; i < this.imageList.length;i++)
-        {
-            //img.src     = URL.createObjectURL(img);   //Template
-            this.imageSrcList[i] = URL.createObjectURL(this.imageList[i].image);
-        }
-        
 
         //Create Temporary Variables to resize Grid appropriately
         var tableWidth = 100;
