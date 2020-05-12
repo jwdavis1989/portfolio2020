@@ -18,8 +18,8 @@ class UserModel {
     async getUserID (username) {
         const sql = `SELECT uuid from Users WHERE username=?`;
         var tempUuid = await this.DAO.get(sql, [username]);
-        console.log(`UserModel - UUID: ${tempUuid}`);
-        return tempUuid;
+        console.log(`UserModel - UUID: ${tempUuid.uuid}`);
+        return tempUuid.uuid;
     }
 
     async getPasswordHash (username) {
