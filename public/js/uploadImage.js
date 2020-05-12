@@ -16,7 +16,7 @@ async function uploadImage()
             body: JSON.stringify(data),
             headers: {"Content-Type": "application/json"}
         });
-        
+        console.log(`Res.status = ${res.status}`)
         if (res.status === 403) {
             alert("You can't do that");
         } else if (res.status === 200) {
