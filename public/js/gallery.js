@@ -2,7 +2,7 @@
 
 var Gallery = 
 {
-    userID: "none",
+    username: "none",
     currentPage: 1,
     totalPages: 1,
     numberOfImages: 0,
@@ -11,11 +11,11 @@ var Gallery =
     setData: function()
     {
         var url = window.location.pathname;
-        this.userID = url.substring(url.lastIndexOf('/') + 1);
+        this.username = url.substring(url.lastIndexOf('/') + 1);
 
         //Requests image JSON from server
         async function generateSentence (event) {
-            fetch(`http://40.122.146.213/gallery/${this.userID}`, {
+            fetch(`http://40.122.146.213/gallery/${this.username}`, {
                 method: 'GET'
             }).then( res => {
                 console.log(res)
