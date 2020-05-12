@@ -223,7 +223,9 @@ app.post("/keywords", errorHandler( async (req, res) => {
 //Logout Path
 app.get("/logout", (req, res) => {
     req.session.isVerified = false;
-    res.sendStatus(200);
+    //res.sendStatus(200);
+    res.redirect("/login");
+
 });
 
 //Upload new image to your gallery
