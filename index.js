@@ -237,10 +237,10 @@ app.post("/gallery", errorHandler( async (req, res) => {
     }
     const data = req.body;
     console.log(data);
-    console.log(`UUID: ${req.session.uuid}
+    console.log(`UUID: ${req.session.username}
     Title: ${data.title}
     Image: ${data.image}`);
-    await Images.add(req.session.uuid, data.title, data.image);
+    await Images.add(req.session.username, data.title, data.image);
     res.sendStatus(200);
 }));
 
