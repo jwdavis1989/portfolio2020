@@ -5,13 +5,12 @@ class UserController
     constructor (dao) 
     {
         this.UserModel = new UserModel(dao);
-
-        async getUserID (username) 
-        {
-            return await this.UserModel.getUserID(username);
-        }
-
     }
+    async getUserID(username)
+    {
+        return await this.UserModel.getUserID(username);
+    }
+
 }
 
 module.exports = UserController;
