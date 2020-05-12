@@ -298,7 +298,7 @@ app.post("/login", errorHandler( async (req, res) => {
         req.session.username = username;
         //req.session.uuid = await UserController.getUserID(username);
         //req.session.uuid = await UserModel.getUserID(username);
-        req.session.uuid = await UserCon.getUserID(username).uuid;
+        req.session.uuid = await UserModel.getUserID(username).uuid;
         console.log(`Inside Conditional - req.session.uuid = ${req.session.uuid}`);
     }
     console.log(`Outside Conditional - req.session.uuid = ${req.session.uuid}`);
