@@ -6,8 +6,6 @@ async function uploadImage()
         title: document.getElementById('title').value,
         image: document.getElementById('file').files[0]
     }
-    
-    //img.src     = URL.createObjectURL(img);   //USE THIS TO RETRIEVE IT FROM THE DB
 
     //Call path to post the saved data to the database
     try {
