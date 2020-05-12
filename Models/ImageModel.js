@@ -33,4 +33,4 @@ class ImageModel {
     }
 }
   
-module.exports = KeywordsModel;
+module.exports = ImageModel;
