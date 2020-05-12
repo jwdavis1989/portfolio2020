@@ -139,7 +139,7 @@ app.get("/view_gallery/:userID", (req, res) => {
 });
 
 app.get("/view_gallery", (req, res) => {
-    res.redirect(`/view_gallery/${req.session.userID}`);
+    res.redirect(`/view_gallery/${req.session.uuid}`);
 });
 
 
@@ -229,7 +229,7 @@ app.post("/gallery", errorHandler( async (req, res) => {
     }
     const data = req.body;
     console.log(data);
-    await Images.add(req.session.userID, data.title, data.image);
+    await Images.add(req.session.uuid, data.title, data.image);
     res.sendStatus(200);
 }));
 
