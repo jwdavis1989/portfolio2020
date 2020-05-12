@@ -302,6 +302,7 @@ app.post("/login", errorHandler( async (req, res) => {
         console.log(`Inside Conditional - req.session.uuid = ${req.session.uuid}`);
     }
     console.log(`Outside Conditional - req.session.uuid = ${req.session.uuid}`);
+    console.log(req.session);
     res.sendStatus(status);
 }));
 
