@@ -1,0 +1,20 @@
+{
+  "name": "rng",
+  "version": "1.0.0",
+  "description": "Drawing Idea Generator with Gallery",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jerry Davis",
+  "license": "ISC",
+  "dependencies": {
+    "argon2": "^0.26.2",
+    "connect-redis": "^4.0.4",
+    "express": "^4.17.1",
+    "express-session": "^1.17.0",
+    "redis": "^3.0.2",
+    "sqlite3": "^4.1.1",
+    "winston": "^3.2.1"
+  }
+}
