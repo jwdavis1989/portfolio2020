@@ -17,14 +17,11 @@ function uploadImage()
             headers: {"Content-Type": "application/json"}
         });
         
-        if (res.redirected) {
-            return window.location = res.url;
-        }
-
         if (res.status === 403) {
             alert("You can't do that");
         } else if (res.status === 200) {
             //TODO Success Message!
+            alert(`${this.title} successfully added to the database!`);
         }
     } catch (err) {
         console.log(err);
