@@ -238,6 +238,10 @@ app.post("/gallery", errorHandler( async (req, res) => {
     res.sendStatus(200);
 }));
 
+//Path to upload images
+app.get("/upload_image", errorHandler(async (req, res) => {
+    res.sendFile(path.join(__dirname, "public", "html", "uploadImage.html"));
+}));
 
 /*
         Account Registration
