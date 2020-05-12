@@ -32,8 +32,8 @@ class UserModel {
         // Username needs to be unique so this will throw an exception if we 
         // attempt to add a user that already exists
         const uuid = uuidV4();
-        await this.DAO.run(sql, [uuid, username, passwordHash]);
         console.log(`UserModel - UUID: ${uuid}`);
+        await this.DAO.run(sql, [uuid, username, passwordHash]);
     }
 }
 
