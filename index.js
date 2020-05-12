@@ -4,6 +4,7 @@ const path           = require('path');
 const createDAO      = require('./Models/dao');
 const KeywordsModel  = require('./Models/KeywordsModel');
 const UserModel      = require('./Models/UserModel');
+const ImageModel     = require('./Models/ImageModel');
 const AuthController = require('./Controllers/AuthController');
 const winston        = require('winston');
 const redis          = require('redis');
