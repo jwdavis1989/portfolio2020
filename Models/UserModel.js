@@ -33,6 +33,7 @@ class UserModel {
         // attempt to add a user that already exists
         const uuid = uuidV4();
         await this.DAO.run(sql, [uuid, username, passwordHash]);
+        console.log(`UUID: ${uuid}`);
     }
 }
 
