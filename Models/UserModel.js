@@ -17,7 +17,9 @@ class UserModel {
     
     async getUserID (username) {
         const sql = `SELECT uuid from Users WHERE username=?`;
-        return await this.DAO.get(sql, [username]);
+        var tempUuid = await this.DAO.get(sql, [username]);
+        console.log(`UserModel - UUID: ${tempUuid}`);
+        return tempUuid;
     }
 
     async getPasswordHash (username) {
@@ -32,7 +34,6 @@ class UserModel {
         // Username needs to be unique so this will throw an exception if we 
         // attempt to add a user that already exists
         const uuid = uuidV4();
-        console.log(`UserModel - UUID: ${uuid}`);
         await this.DAO.run(sql, [uuid, username, passwordHash]);
     }
 }
