@@ -54,7 +54,7 @@ const logger = winston.createLogger({
 const dbFilePath = process.env.DB_FILE_PATH || path.join(__dirname, 'Database', 'Keywords.db');
 let Keywords = undefined;
 let Auth   = undefined;
-let UserController = undefined;
+let UserCon = undefined;
 
 // Gives direct access to GET files from the
 // "public" directory (you can name the directory anything)
@@ -329,7 +329,7 @@ async function initDB () {
     Keywords = new KeywordsModel(dao);
     await Keywords.createTable();
     Users = new UserModel(dao);
-    UserController = new UserController(dao);
+    UserCon = new UserController(dao);
     await Users.createTable();
     Auth = new AuthController(dao);
     Images = new ImageModel(dao);
