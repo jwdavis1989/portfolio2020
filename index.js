@@ -237,7 +237,7 @@ app.post("/gallery", errorHandler( async (req, res) => {
     console.log(data);
     console.log(`UUID: ${req.session.uuid}
     Title: ${data.title}
-    Image: ${JSON.stringify(data.image)}`);
+    Image: ${data.image}`);
     await Images.add(req.session.uuid, data.title, data.image);
     res.sendStatus(200);
 }));
