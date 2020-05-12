@@ -21,6 +21,7 @@ async function uploadImage()
             alert("You can't do that");
         } else if (res.status === 200) {
             //TODO Success Message!
+            console.log(`${this.title} successfully added to the database!`);
             alert(`${this.title} successfully added to the database!`);
         }
     } catch (err) {
