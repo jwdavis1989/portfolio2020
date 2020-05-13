@@ -22,7 +22,7 @@ var Gallery =
             }).then( data => {
 
                 //Waits for reply, then populates the imageList array with loaded images
-                imageList = data.images;
+                this.imageList = data.images;
                 // log the data
                 console.log(data);
 
