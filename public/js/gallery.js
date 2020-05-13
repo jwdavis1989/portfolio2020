@@ -80,7 +80,7 @@ var Gallery =
                 imagesDisplayed = this.imageList.length;
 
                 //For Each Image
-                for (var i = ((this.currentPage-1) * 4); i < (this.currentPage * 4);i++)
+                for (var i = ((this.currentPage-1) * 4); i < (this.currentPage * 4) - 1;i++)
                 {
                     console.log(`Within the Loop for (var i = ((this.currentPage-1) * 4); i < (this.currentPage * 4);i++)`);
                     if (imagesDisplayed > 0)
