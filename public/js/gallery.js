@@ -87,10 +87,12 @@ var Gallery =
                     {
                         tempHTML += `<td>`;
                         //Draw the Image
+                        console.log(`After 90: i = ${i}
+                        Image List = ${this.imageList}`);
                         tempHTML += `<img src="${this.imageList[i].image}">`;
                         tempHTML += `</td>`;
                         imagesDisplayed--;
-                        console.log(i);
+                        
                     }
                 }
         tempHTML += `</tr>
