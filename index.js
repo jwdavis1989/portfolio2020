@@ -11,6 +11,43 @@ const redis          = require('redis');
 const session        = require('express-session');
 const RedisStore     = require('connect-redis')(session);
 const UserController = require('./Controllers/UserController');
+const multer         = require('multer');
+
+const storage = multer.diskStorage(
+{
+    destination: function(req, file, cb) 
+    {
+        cb(null, './uploads/'); //Call Back
+    },
+    filename: function(req, file, cb) 
+    {
+        var newDate = new Date();
+        //Create the URL for the stored image from timestamp + Title + File Type
+        cb(null, newDate.getTime() + "-" + req.body.title + file.originalname.substring(file.originalname.lastIndexOf('.'), file.originalname.length));
+    }
+});
+
+//Ensures user uploads image file types
+const fileFilter = (req, file, cb) => {
+    if (file.mimetype === 'image/jpeg' || file.mimetype === 'image/png' || file.mimetype === 'image/gif') 
+    {
+        cb(null, true);
+    }
+    else 
+    {
+        cb(new Error('Invalid file type'), false);
+    }
+}
+
+//Initialize multer storage object
+const upload = multer(
+    {
+        storage: storage, 
+        limits: {
+            fileSize: 1024 * 1024 * 5 //Limits user to 5mb uploads
+    },
+    fileFilter: fileFilter
+});
 
 const redisClient = redis.createClient();
 
@@ -59,6 +96,9 @@ let UserCon = undefined;
 // Gives direct access to GET files from the
 // "public" directory (you can name the directory anything)
 app.use(express.static('public'));
+
+//This Happy Line Here
+app.use('/uploads', express.static('uploads')); // makes upload folder statically availible.
 
 // We add this to the middleware so it logs every request
 // don't do this in production since it will log EVERYTHING (including passwords)
@@ -228,19 +268,19 @@ app.get("/logout", (req, res) => {
 });
 
 //Upload new image to your gallery
-app.post("/gallery", errorHandler( async (req, res) => {
+app.post("/gallery", upload.single("image"), errorHandler( async (req, res) => {
     // This prevents adding new items unless you are authenticated
     // essentially it provides read-only access to the keywords
     // for unauthenticated users
     if (!req.session.isVerified) {
         return res.sendStatus(403);
     }
-    const data = req.body;
-    console.log(data);
-    console.log(`UUID: ${req.session.username}
-    Title: ${data.title}
-    Image: ${data.image}`);
-    await Images.add(req.session.username, data.title, data.image);
+    // const data = req.body;
+    // console.log(data);
+    // console.log(`UUID: ${req.session.username}
+    // Title: ${data.title}
+    // Image: ${data.image}`);
+    await Images.add(req.session.username, req.body.title, req.file.path);
     res.sendStatus(200);
 }));
 

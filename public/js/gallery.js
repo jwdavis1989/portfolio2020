@@ -6,8 +6,7 @@ var Gallery =
     currentPage: 1,
     totalPages: 1,
     numberOfImages: 0,
-    imageList: [],
-    imageSrcList: [],
+    imageList: [],,
 
     setData: function()
     {
@@ -30,32 +29,18 @@ var Gallery =
                 //Calculate Number of Pages
                 this.numberOfImages = data.images.length;
                 this.totalPages = Math.ceil(this.numberOfImages / 4);
+
+                //Append Hostname of Website to stored URLS
+                for (var i=0;i<this.numberOfImages;i++)
+                {
+                    this.imageList[i].image = `${window.location.host} / ${this.imageList[i].image}`;
+                }
+
             }).catch( err => {
                 console.log(err);
             });
             console.log(`After Fetch`);
         
-
-        //Generate Image URLs for each image in imageList
-        for (var i=0; i < this.imageList.length;i++)
-        {
-            //img.src     = URL.createObjectURL(img);   //Template
-            this.imageSrcList[i] = URL.createObjectURL(this.imageList[i].image);
-        }
-        
-        /*fetch('http://40.122.146.213/gallery/:username', {
-            method: 'GET'
-        }).then( res => {
-            console.log(res)
-            return res.json();
-        }).then( data => {
-            // log the data
-            console.log(data);
-            image_list = data.keywords;
-        }).catch( err => {
-            console.log(err);
-        });*/
-
         this.render();
     },
 
@@ -100,7 +85,7 @@ var Gallery =
                 {
                     tempHTML += `<td>`;
                     //Draw the Image
-                    tempHTML += `<img src="${this.imageSrcList[i]}">`;
+                    tempHTML += `<img src="${this.imageList[i]}">`;
                     tempHTML += `</td>`;
                 }
         tempHTML += `</tr>

@@ -1,11 +1,6 @@
 //Function that takes the user uploaded image file, then stores it as a 64bit url I think
 async function uploadImage()
 {
-    /*var data = 
-    {
-        title: document.getElementById('title').value,
-        image: document.getElementById('file').files[0]
-    }*/
     var data = new FormData();
     const tempImage = document.getElementById('file').files[0];
     console.log(`TempImage = ${tempImage}`);

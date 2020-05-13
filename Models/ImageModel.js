@@ -9,7 +9,7 @@ class ImageModel {
             id INTEGER PRIMARY KEY AUTOINCREMENT,
             uuid TEXT,
             title TEXT,
-            image BLOB,
+            image TEXT,
             timestamp DATE
         )`
         return await this.DAO.run(sql)
