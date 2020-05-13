@@ -231,13 +231,13 @@ app.get("/random", errorHandler(async (req, res) => {
     const structure = Math.floor(Math.random() * 3);
     switch(structure){
         case 0: 
-            sentence = `${adjective1[0].text} ${subject1[0].text} ${verb1[0].text} in ${adjective2[0].text} ${location[0].text}.`;
+            sentence = `${adjective1[0].text} ${subject1[0].text} ${verb1[0].text}s in ${adjective2[0].text} ${location[0].text}.`;
             break;
         case 1: 
             sentence = `${adjective1[0].text} ${subject1[0].text}s who ${verb1[0].text} near ${adjective2[0].text} ${location[0].text} also ${verb2[0].text}.`;
             break;
         case 2: 
-            sentence = `${subject1[0].text} ${verb1[0].text} and ${verb2[0].text} ${adjective2[0].text} ${subject2[0].text}.`;
+            sentence = `${subject1[0].text}s ${verb1[0].text} and ${verb2[0].text} ${adjective2[0].text} ${subject2[0].text}s.`;
             break;
     };
 
