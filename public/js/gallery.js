@@ -35,13 +35,12 @@ var Gallery =
                 {
                     this.imageList[i].image = `${window.location.host}/${this.imageList[i].image}`;
                 }
-
+                this.render();
             }).catch( err => {
                 console.log(err);
             });
             console.log(`After Fetch`);
         
-        this.render();
     },
 
     render: function()
@@ -83,6 +82,7 @@ var Gallery =
                 //For Each Image
                 for (var i = ((this.currentPage-1) * 4); i < (this.currentPage * 4);i++)
                 {
+                    console.log(`Within the Loop for (var i = ((this.currentPage-1) * 4); i < (this.currentPage * 4);i++)`);
                     if (imagesDisplayed > 0)
                     {
                         tempHTML += `<td>`;
