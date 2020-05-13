@@ -6,7 +6,7 @@ var Gallery =
     currentPage: 1,
     totalPages: 1,
     numberOfImages: 0,
-    imageList: [],,
+    imageList: [],
 
     setData: function()
     {
