@@ -80,10 +80,13 @@ var Gallery =
                 imagesDisplayed = this.imageList.length;
 
                 //For Each Image
-                for (var i = ((this.currentPage-1) * 4); i < (this.currentPage * 4) - 1;i++)
+                //for (var i = ((this.currentPage-1) * 4); i < (this.currentPage * 4) - 1;i++)
+                var start = (this.currentPage - 1) * 4;
+                for (var i = start; i < start + 4 && i < imagesDisplayed;i++)
                 {
-                    console.log(`Within the Loop for (var i = ((this.currentPage-1) * 4); i < (this.currentPage * 4);i++)`);
-                    if (imagesDisplayed > 0)
+                    console.log(`Within the Loop`);
+                    //if (imagesDisplayed > 0)
+                    if (this.imageList[i])
                     {
                         tempHTML += `<td>`;
                         //Draw the Image
@@ -91,7 +94,7 @@ var Gallery =
                         Image List = ${this.imageList}`);
                         tempHTML += `<img src="${this.imageList[i].image}">`;
                         tempHTML += `</td>`;
-                        imagesDisplayed--;
+                        //imagesDisplayed--;
                         
                     }
                 }
