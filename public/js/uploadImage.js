@@ -18,8 +18,8 @@ async function uploadImage()
             alert("You can't do that");
         } else if (res.status === 200) {
             //TODO Success Message!
-            console.log(`${data.title} successfully added to the database!`);
-            alert(`${data.title} successfully added to the database!`);
+            console.log(`Image successfully added to the database!`);
+            alert(`Image successfully added to the database!`);
         }
     } catch (err) {
         console.log(err);
