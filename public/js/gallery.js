@@ -108,8 +108,8 @@ var Gallery =
         {
             this.currentPage++;
             this.render();
+            console.log(`Current Page: ${this.currentPage}`);
         }
-        console.log(`Current Page: ${this.currentPage}`);
     },
 
     loadPreviousPage: function()
