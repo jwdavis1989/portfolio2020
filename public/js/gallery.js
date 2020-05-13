@@ -33,7 +33,7 @@ var Gallery =
                 //Append Hostname of Website to stored URLS
                 for (var i=0;i<this.numberOfImages;i++)
                 {
-                    this.imageList[i].image = `${window.location.host}/${this.imageList[i].image}`;
+                    this.imageList[i].image = `http://${window.location.host}/${this.imageList[i].image}`;
                 }
                 this.render();
             }).catch( err => {
