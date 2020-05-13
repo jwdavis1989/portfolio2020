@@ -33,7 +33,7 @@ var Gallery =
                 //Append Hostname of Website to stored URLS
                 for (var i=0;i<this.numberOfImages;i++)
                 {
-                    this.imageList[i].image = `${window.location.host} / ${this.imageList[i].image}`;
+                    this.imageList[i].image = `${window.location.host}/${this.imageList[i].image}`;
                 }
 
             }).catch( err => {
@@ -78,15 +78,20 @@ var Gallery =
             <tbody>
                 <tr>`;
                 //Create a temp iterator that tracks how many images are left to display total
-                imagesDisplayed = 0;
+                imagesDisplayed = this.imageList.length;
 
                 //For Each Image
                 for (var i = ((this.currentPage-1) * 4); i < (this.currentPage * 4);i++)
                 {
-                    tempHTML += `<td>`;
-                    //Draw the Image
-                    tempHTML += `<img src="${this.imageList[i]}">`;
-                    tempHTML += `</td>`;
+                    if (imagesDisplayed > 0)
+                    {
+                        tempHTML += `<td>`;
+                        //Draw the Image
+                        tempHTML += `<img src="${this.imageList[i].image}">`;
+                        tempHTML += `</td>`;
+                        imagesDisplayed--;
+                        console.log(i);
+                    }
                 }
         tempHTML += `</tr>
                 </tbody>
