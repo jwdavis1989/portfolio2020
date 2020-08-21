@@ -167,7 +167,7 @@ app.delete('/account/:userID/user', (req, res) => {
 
 // Default route
 app.get('/', (req, res) => {
-    res.redirect('/login');
+    res.redirect('/html/portfolio.html');
 });
 
 app.get("/keywords_list", (req, res) => {
