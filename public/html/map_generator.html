@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="../css/map_generator.css">   
+    </head>
+    <body onload="">
+
+        <!-- Header -->
+        <div class="mapGenBanner" id="myHeader">
+        <h1>DnDone Map Generator</h1>
+        </div>
+
+        <!-- Map Grid -->
+                        <table width="100%" class="mapBorder">
+                            <tbody>
+                                <tr>
+                                    <form name="userSettings" method="post">
+                                        Interior Theme: <select id="theme" name="theme">
+                                                            <option value="stone">Stone</option>
+                                                            <option value="bluestone">Bluestone</option>
+                                                        </select>
+                                        Exterior Theme: <select id="outside" name="outside">
+                                                            <option value="../resources/images/map_generator/cave_background.jpg">Cave</option>
+                                                            <option value="../resources/images/map_generator/forest_background.jpg">Forest</option>
+                                                            <option value="../resources/images/map_generator/swamp_grass_background.jpg">Swamp</option>
+                                                            <option value="../resources/images/map_generator/dry_ground_background.jpg">Arid</option>
+                                                            <option value="../resources/images/map_generator/desert_background.jpg">Desert</option>
+                                                            <option value="../resources/images/map_generator/ocean_background.jpg">Ocean</option>
+                                                            <option value="../resources/images/map_generator/steampunk_background.jpg">Steampunk</option>
+                                                            <option value="../resources/images/map_generator/lava_background.gif">Lava</option>
+                                                            <option value="../resources/images/map_generator/space_background.gif">Space</option>
+                                                        </select>
+                                        Size: <select id="size" name="size">
+                                                    <option value=2>Very Small</option>
+                                                    <option value=3>Small</option>
+                                                    <option value=4>Medium</option>
+                                                    <option value=6>Large</option>
+                                                    <option value=8>Titanic</option>
+                                                    <option value=16>Why?</option>
+                                                </select>
+                                        <input type="button" value="Randomize" onclick="run()">
+                                    </form>
+                                </tr>
+                                <tr>
+                                    <!-- This is the Beginning Of the Javascript-generated HTML-->
+                                    <div id="mapGrid">
+                                    </div>
+                                    <!-- This is the End Of the Javascript-generated HTML-->
+                                </tr>
+                                <tr>
+                                    <a href="./portfolio.html#Software Engineering Map Generator"><input type="button" value="Return to Portfolio"></a>
+                                </tr>
+                            </tbody>
+                        </table>
+            
+
+        <!-- Include Javascript Script -->
+        <script src="../js/map_generator.js"></script>
+    </body>
+</html>
