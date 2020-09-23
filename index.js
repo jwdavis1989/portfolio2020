@@ -146,22 +146,22 @@ app.all('/account/:userID/*', (req, res, next) => {
 
 // All information associated with a user account
 app.get('/account/:userID/info', (req, res) => {
-    // TODO: retrieve account information and send back to client
+    //Retrieve account information and send back to client
     res.send('info')
 });
 
 app.post('/account/:userID/passwordReset', (req, res) => {
-    // TODO: update password
+    //Update password
     res.send('reset password')
 });
 
 app.post('/account/:userID/username', (req, res) => {
-    // TODO: update username
+    //Update username
     res.send('update username')
 });
 
 app.delete('/account/:userID/user', (req, res) => {
-    // TODO: delete user from db
+    // Delete user from db
     res.send('delete user')
 });
 
@@ -335,7 +335,7 @@ app.post("/login", errorHandler( async (req, res) => {
     const isVerified = await Auth.login(username, password);
     const status = isVerified ? 200 : 401;
     req.session.isVerified = isVerified;
-    // TODO: Set the user's ID on their session object
+    //Set the user's ID on their session object
     if (isVerified) {
         req.session.username = username;
         //req.session.uuid = await UserController.getUserID(username);
